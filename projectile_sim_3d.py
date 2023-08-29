@@ -191,9 +191,9 @@ print("maxX:",truncate(maxX,3))
 print("maxY:",truncate(maxY,3))
 print("maxZ:",truncate(maxZ,3))
 
-print(listX) #debug
-print(listY) #debug
-print(listZ) #debug
+#print(listX) #debug
+#print(listY) #debug
+#print(listZ) #debug
 
 print("\nFINISHED")
 
