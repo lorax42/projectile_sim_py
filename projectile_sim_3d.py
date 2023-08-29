@@ -7,6 +7,24 @@ def truncate(n, decimals=3):
     multiplier = 10 ** decimals
     return int(n * multiplier) / multiplier
 
+def printAndWrite():
+    print(truncate(t,2),truncate(x,3),truncate(y,3),truncate(z,3),truncate(vx,3),truncate(vy,3),truncate(vz,3),truncate(ax,3),truncate(ay,3),truncate(az,3))
+
+    dataRow=truncate(t,2),truncate(x,3),truncate(y,3),truncate(z,3),truncate(vx,3),truncate(vy,3),truncate(vz,3),truncate(ax,3),truncate(ay,3),truncate(az,3)
+    # write a row to the csv file
+    writer.writerow(dataRow)
+    
+    listT.append(t)
+    listX.append(x)
+    listY.append(y)
+    listZ.append(z)
+    listVx.append(vx)
+    listVy.append(vy)
+    listVz.append(vz)
+    listAx.append(ax)
+    listAy.append(ay)
+    listAz.append(az)
+
 """ def ideal():
     v0=20
     g=-9.81
@@ -106,22 +124,7 @@ writer.writerow(header)
 
 #sim loop
 while z >= 0.0:
-    print(truncate(t,2),truncate(x,3),truncate(y,3),truncate(z,3),truncate(vx,3),truncate(vy,3),truncate(vz,3),truncate(ax,3),truncate(ay,3),truncate(az,3))
-
-    dataRow=truncate(t,2),truncate(x,3),truncate(y,3),truncate(z,3),truncate(vx,3),truncate(vy,3),truncate(vz,3),truncate(ax,3),truncate(ay,3),truncate(az,3)
-    # write a row to the csv file
-    writer.writerow(dataRow)
-    
-    listT.append(t)
-    listX.append(x)
-    listY.append(y)
-    listZ.append(z)
-    listVx.append(vx)
-    listVy.append(vy)
-    listVz.append(vz)
-    listAx.append(ax)
-    listAy.append(ay)
-    listAz.append(az)
+    printAndWrite()
     
     t+=dt
 
@@ -183,6 +186,8 @@ while z >= 0.0:
     vx+=v0x
     vy+=v0y
     vz+=v0z
+
+printAndWrite()
 
 # close csv file
 f.close()
