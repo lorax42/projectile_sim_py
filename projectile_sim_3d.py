@@ -50,6 +50,10 @@ cd=0.47
 ar=0.078
 dt=0.01
 
+windX=0.0
+windY=0.0
+windZ=0.0
+
 #initial:
 v0x=20.0
 v0y=5.0
@@ -128,9 +132,9 @@ while z >= 0.0:
     
     t+=dt
 
-    v0x=vx
-    v0y=vy
-    v0z=vz
+    v0x=vx+windX
+    v0y=vy+windY
+    v0z=vz+windZ
 
 
     x0=v0x*dt
@@ -219,7 +223,7 @@ ax.set_aspect('equal')
 ax.plot3D(listX,listY,listZ,color='b',label="sim",linestyle='-')
 #plt.plot(listParabolX,listParabolY,color='r',label="ideal",linestyle='--')
 plt.title("Projectile Flight Path")
-#plt.xlabel("x / m")
-#plt.ylabel("y / m")
+plt.xlabel("x / m")
+plt.ylabel("y / m")
 plt.legend()
 plt.show()
